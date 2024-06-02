@@ -11,7 +11,7 @@ body {
 }
 
 header {
-  width: 100%;
+  width: 100%;  
   position: relative;
   display: flex; /* Torna o cabeçalho um flex container */
   align-items: center; /* Alinha verticalmente */
@@ -40,15 +40,16 @@ header > div {
 .corpo {
   display: flex;
   justify-content: space-around;
+  align-items: flex-start;
 }
 
 .corpo_texto {
   padding: 2vw 3vw 3vw 3vw;
   width: 60%;
+  min-height: 75vh;
   background-color: #e4f9ca;
   display: flex;
   flex-direction: column;
-  align-self: center;
   box-shadow: 0 0.2em 0.5em rgb(214, 205, 205);
 }
 

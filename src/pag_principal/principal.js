@@ -1,26 +1,92 @@
-import "./style.css";
+import "./principal.css";
+import Logo from "../imagens/logo_gera.png";
 import React, { useState, useEffect } from "react";
 
 function Principal() {
+  const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+  const monthNames = [
+    "Janeiro",
+    "Fevereiro",
+    "Março",
+    "Abril",
+    "Maio",
+    "Junho",
+    "Julho",
+    "Agosto",
+    "Setembro",
+    "Outubro",
+    "Novembro",
+    "Dezembro",
+  ];
+
+  useEffect(() => {
+    createCalendar(currentMonth, currentYear);
+  }, [currentMonth, currentYear]); // Execute sempre que o mês ou ano mudar
+
+  function createCalendar(month, year) {
+    let firstDay = new Date(year, month).getDay();
+    let daysInMonth = 32 - new Date(year, month, 32).getDate();
+    let tbl = document.getElementById("calendar-body");
+    tbl.innerHTML = ""; // Limpa o conteúdo existente
+    let date = 1;
+    for (let i = 0; i < 6; i++) {
+      let row = document.createElement("tr");
+      for (let j = 0; j < 7; j++) {
+        if (i === 0 && j < firstDay) {
+          let cell = document.createElement("td");
+          let cellText = document.createTextNode("");
+          cell.appendChild(cellText);
+          row.appendChild(cell);
+        } else if (date > daysInMonth) {
+          break;
+        } else {
+          let cell = document.createElement("td");
+          let cellText = document.createTextNode(date);
+          cell.appendChild(cellText);
+          row.appendChild(cell);
+          date++;
+        }
+      }
+      tbl.appendChild(row);
+    }
+    document.getElementById("header").innerHTML =
+      monthNames[month] + " " + year;
+  }
+
+  function moveMonth(step) {
+    let newMonth = currentMonth + step;
+    let newYear = currentYear;
+    if (newMonth === -1) {
+      newMonth = 11;
+      newYear--;
+    } else if (newMonth === 12) {
+      newMonth = 0;
+      newYear++;
+    }
+    setCurrentMonth(newMonth);
+    setCurrentYear(newYear);
+  }
+
   return (
     <body>
       <header>
-        <img src="../imagens/logo_gera.png" alt="Logo GeraBixo" />
+        <img className="Logo" src={Logo} alt="logo gerabixo"></img>
         <h1>GERABIXO</h1>
-        <div class="spacer"></div>
+        <div className="spacer"></div>
       </header>
-      <div class="corpo">
-        <div class="esquerda">
+      <div className="corpo">
+        <div className="esquerda">
           <p>
             <button>LOGIN</button>
           </p>
 
           <div id="Calendario">
             <div id="header"></div>
-            <button class="btn" onclick="moveMonth(-1)">
+            <button className="btn" onClick={() => moveMonth(-1)}>
               &#10094; Anterior
             </button>
-            <button class="btn" onclick="moveMonth(1)">
+            <button className="btn" onClick={() => moveMonth(1)}>
               Próximo &#10095;
             </button>
             <table>
@@ -39,18 +105,29 @@ function Principal() {
             </table>
           </div>
         </div>
-        <main class="corpo_texto">
+
+
+        <main className="corpo_texto">
           <h2>Página Principal</h2>
           <p>
             texto para o geranews Lorem ipsum dolor sit amet consectetur
             adipisicing elit. Veritatis nisi neque tempora delectus
             perspiciatis. Quidem aperiam error alias vero repudiandae architecto
-            repellat! Necessitatibus asperiores doloribus, laudantium saepe
-            ipsum eius perspiciatis? Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Eum, distinctio rerum
+   
+
+            texto para o geranews Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Veritatis nisi neque tempora delectus
+            perspiciatis. Quidem aperiam error alias vero repudiandae architecto
+
+            texto para o geranews Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Veritatis nisi neque tempora delectus
+
+   
+
+
           </p>
         </main>
-        <div class="direita">
+        <div className="direita">
           <p>
             <h2>Torne-se um Apoiador</h2>
             <button>Registre-se</button>
@@ -61,4 +138,4 @@ function Principal() {
   );
 }
 
-export default Principal
+export default Principal;
