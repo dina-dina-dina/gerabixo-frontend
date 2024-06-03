@@ -8,6 +8,7 @@ import {
 import PaginaPrincipal from "./pag_principal/principal.js"
 import PaginaAlunos from "./pag_alunos/alunos.js"
 import PaginaProf from "./pag_prof/professor.js"
+import PaginaAdm from "./pag_adm/administrador.js"
 
 function Rotas(){
     return(
@@ -16,6 +17,7 @@ function Rotas(){
         <Route path="/" element={<PaginaPrincipal />} />
         <Route path="/alunos" element={<PaginaAlunos />} />
         <Route path="/professores" element={<PaginaProf />} />
+        <Route path="/administrador" element={<PaginaAdm />} />
       </Routes>
     </Router>
     )

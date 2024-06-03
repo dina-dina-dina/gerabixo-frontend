@@ -1,0 +1,279 @@
+@charset "UTF-8";
+
+.administrador{
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(to bottom, #c9f98e, #d1f4a5);
+}
+
+body {
+  min-height: 100vh;
+}
+
+header {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #2accc3;
+  text-align: center;
+  box-shadow: 0 0.2em 0.5em rgb(214, 205, 205);
+}
+
+header > img {
+  margin-right: auto;
+  width: 15%;
+}
+
+header > h1 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3vw;
+  color: rgb(0, 0, 0);
+}
+
+header .spacer {
+  width: 15%;
+}
+
+.corpo {
+  display: flex;
+  width: 100%;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 0;
+}
+
+.esquerda {
+  width: 15vw;
+  height: 100%;
+  margin-top: 2vw;
+  margin-right: 2vw;
+  padding: 1vw;
+  border-radius: 40px;
+}
+
+.esquerda > p > button {
+  background-color: #ffcc00;
+  border: solid 1px #d5aa00;
+  border-radius: 40px;
+  height: 3vw;
+  margin: -0.5vw;
+  width: 100%;
+  font-size: 1vw;
+  color: rgb(63, 63, 63);
+  font-weight: 600;
+  letter-spacing: 0.1vw;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.esquerda > p > button:hover {
+  background-color: #ffde59;
+  border-radius: 40px;
+  box-shadow: 0px 0px 4px #d5aa00;
+  font-weight: 700;
+  font-style: italic;
+  color: rgb(0, 0, 0);
+}
+
+.esquerda > p {
+  padding: 1vw;
+  gap: 2vw;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3vw;
+  box-shadow: 0.1em 0.1em 0.2em rgb(0, 0, 0);
+}
+
+main {
+  padding: 2vw;
+  width: 50%;
+  min-height: 70vh;
+  background-color: #e4f9ca;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0.2em 0.5em rgb(214, 205, 205);
+  border-radius: 0px 0px 40px 40px;
+}
+
+.corpo_texto {
+  margin-top: 0;
+  width: 100%;
+  max-width: 400px;
+  background-color: #f5feea;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0.2em 0.5em rgb(214, 205, 205);
+  border-radius: 40px;
+  padding: 2vw;
+}
+
+main > h2 {
+  margin: 2vw;
+  font-size: 2vw;
+  text-align: center;
+  color: #000;  /* Changed to black */
+}
+
+.corpo_texto form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.corpo_texto form label {
+  margin-bottom: 1vw;
+  font-size: 1.2vw;
+  width: 100%;
+  text-align: left;
+}
+
+.corpo_texto form button {
+  background-color: #ffcc00;
+  border: solid 1px #d5aa00;
+  border-radius: 40px;
+  height: 3vw;
+  font-size: 1.2vw;
+  color: rgb(63, 63, 63);
+  font-weight: 600;
+  letter-spacing: 0.1vw;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.corpo_texto form button:hover {
+  background-color: #ffde59;
+  border-radius: 40px;
+  box-shadow: 0px 0px 4px #d5aa00;
+  font-weight: 700;
+  font-style: italic;
+  color: rgb(0, 0, 0);
+}
+
+.form-section {
+  margin-bottom: 2vw;
+  width: 100%;
+}
+
+.form-section h3 {
+  margin-bottom: 1vw;
+  font-size: 1.5vw;
+  color: #000;  /* Changed to black */
+}
+
+.form-section form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.form-section form label {
+  margin-bottom: 1vw;
+  font-size: 1.2vw;
+  width: 100%;
+  text-align: left;
+}
+
+.form-section form input,
+.form-section form textarea,
+.form-section form select {
+  margin-bottom: 1vw;
+  padding: 0.5vw;
+  font-size: 1vw;
+  border: 1px solid #d5aa00;
+  border-radius: 10px;
+  width: calc(100% - 1vw);
+}
+
+.form-section form button {
+  background-color: #ffcc00;
+  border: solid 1px #d5aa00;
+  border-radius: 40px;
+  height: 3vw;
+  font-size: 1.2vw;
+  color: rgb(63, 63, 63);
+  font-weight: 600;
+  letter-spacing: 0.1vw;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form-section form button:hover {
+  background-color: #ffde59;
+  border-radius: 40px;
+  box-shadow: 0px 0px 4px #d5aa00;
+  font-weight: 700;
+  font-style: italic;
+  color: rgb(0, 0, 0);
+}
+
+.form-section select {
+  padding: 0.5vw;
+  font-size: 1vw;
+  border: 1px solid #d5aa00;
+  border-radius: 10px;
+  background-color: #fff;
+  width: 100%;
+}
+
+#Calendario {
+  margin-top: 0vw;
+  position: static;
+  background-color: #f6f6f6;
+  padding: 1vw;
+  border-radius: 10px;
+  box-shadow: 0.1em 0.1em 0.2em rgb(0, 0, 0);
+}
+
+#Calendario th,
+#Calendario td {
+  font-weight: 100;
+  border: 0.1vw solid black;
+  padding: 0.2vw;
+  background-color: #f8e7a3;
+  text-align: center;
+}
+
+#Calendario th {
+  background-color: #ffcc00;
+  padding: 0;
+}
+
+#header {
+  font-size: 1.7vw;
+  margin-bottom: 0.5vw;
+  text-align: center;
+}
+
+.btn {
+  cursor: pointer;
+  align-self: center;
+  justify-content: center;
+  padding: 0.5vw 1vw;
+  margin: 0.2vw;
+  background-color: #fffb00;
+  border: 1px solid #ddd;
+  box-shadow: 0.1em 0.1em 0.2em rgb(118, 118, 118);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ffde59;
+  box-shadow: 0.1em 0.1em 0.4em rgb(118, 118, 118);
+}
+}

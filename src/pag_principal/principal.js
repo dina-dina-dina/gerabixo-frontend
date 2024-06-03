@@ -5,6 +5,9 @@ import React, { useState, useEffect } from "react";
 function Principal() {
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+  const [showLogin, setShowLogin] = useState(false);
+  const [showRegister, setShowRegister] = useState(false);
+  
   const monthNames = [
     "Janeiro",
     "Fevereiro",
@@ -22,13 +25,13 @@ function Principal() {
 
   useEffect(() => {
     createCalendar(currentMonth, currentYear);
-  }, [currentMonth, currentYear]); // Execute sempre que o mês ou ano mudar
+  }, [currentMonth, currentYear]);
 
   function createCalendar(month, year) {
     let firstDay = new Date(year, month).getDay();
     let daysInMonth = 32 - new Date(year, month, 32).getDate();
     let tbl = document.getElementById("calendar-body");
-    tbl.innerHTML = ""; // Limpa o conteúdo existente
+    tbl.innerHTML = "";
     let date = 1;
     for (let i = 0; i < 6; i++) {
       let row = document.createElement("tr");
@@ -68,8 +71,18 @@ function Principal() {
     setCurrentYear(newYear);
   }
 
+  const handleLoginClick = () => {
+    setShowLogin(true);
+    setShowRegister(false);
+  };
+
+  const handleRegisterClick = () => {
+    setShowRegister(true);
+    setShowLogin(false);
+  };
+
   return (
-    <body>
+    <div className="principal">
       <header>
         <img className="Logo" src={Logo} alt="logo gerabixo"></img>
         <h1>GERABIXO</h1>
@@ -78,8 +91,49 @@ function Principal() {
       <div className="corpo">
         <div className="esquerda">
           <p>
-            <button>LOGIN</button>
+            <button onClick={handleLoginClick}>LOGIN</button>
           </p>
+
+          {showLogin && (
+            <div className="login-form">
+              <h2>Login</h2>
+              <form>
+                <label>
+                  Usuário:
+                  <input type="text" name="username" />
+                </label>
+                <label>
+                  Senha:
+                  <input type="password" name="password" />
+                </label>
+                <button type="submit">Entrar</button>
+              </form>
+              <p>
+                Não tem uma conta? <button onClick={handleRegisterClick}>Cadastre-se aqui</button>
+              </p>
+            </div>
+          )}
+
+          {showRegister && (
+            <div className="register-form">
+              <h2>Cadastro</h2>
+              <form>
+                <label>
+                  Nome:
+                  <input type="text" name="name" />
+                </label>
+                <label>
+                  Usuário:
+                  <input type="text" name="username" />
+                </label>
+                <label>
+                  Senha:
+                  <input type="password" name="password" />
+                </label>
+                <button type="submit">Registrar</button>
+              </form>
+            </div>
+          )}
 
           <div id="Calendario">
             <div id="header"></div>
@@ -106,35 +160,57 @@ function Principal() {
           </div>
         </div>
 
-
         <main className="corpo_texto">
           <h2>Página Principal</h2>
           <p>
             texto para o geranews Lorem ipsum dolor sit amet consectetur
             adipisicing elit. Veritatis nisi neque tempora delectus
             perspiciatis. Quidem aperiam error alias vero repudiandae architecto
-   
-
             texto para o geranews Lorem ipsum dolor sit amet consectetur
             adipisicing elit. Veritatis nisi neque tempora delectus
             perspiciatis. Quidem aperiam error alias vero repudiandae architecto
-
             texto para o geranews Lorem ipsum dolor sit amet consectetur
             adipisicing elit. Veritatis nisi neque tempora delectus
 
-   
+            <br /><br />
+            texto para o geranews Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Veritatis nisi neque tempora delectus
+            perspiciatis. Quidem aperiam error alias vero repudiandae architecto
+            texto para o geranews Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Veritatis nisi neque tempora delectus
+            perspiciatis. Quidem aperiam error alias vero repudiandae architecto
+            texto para o geranews Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Veritatis nisi neque tempora delectus
 
+            <br /><br />
+            texto para o geranews Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Veritatis nisi neque tempora delectus
+            perspiciatis. Quidem aperiam error alias vero repudiandae architecto
+            texto para o geranews Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Veritatis nisi neque tempora delectus
+            perspiciatis. Quidem aperiam error alias vero repudiandae architecto
+            texto para o geranews Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Veritatis nisi neque tempora delectus
 
+            <br /><br />
+            texto para o geranews Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Veritatis nisi neque tempora delectus
+            perspiciatis. Quidem aperiam error alias vero repudiandae architecto
+            texto para o geranews Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Veritatis nisi neque tempora delectus
+            perspiciatis. Quidem aperiam error alias vero repudiandae architecto
+            texto para o geranews Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Veritatis nisi neque tempora delectus
+
+            <br /><br />
           </p>
         </main>
         <div className="direita">
-          <p>
-            <h2>Torne-se um Apoiador</h2>
-            <button>Registre-se</button>
-          </p>
+          <h2>Torne-se um Apoiador</h2>
+          <button onClick={handleRegisterClick}>Registre-se</button>
         </div>
       </div>
-    </body>
+    </div>
   );
 }
 
