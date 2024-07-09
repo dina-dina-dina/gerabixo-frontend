@@ -30,6 +30,8 @@ header > h1 {
   font-size: 3.5vw;
   left: 50%;
   transform: translateX(-50%);
+  color: #FFCC00;
+  text-shadow: #137673 2px 2px 2px;
 }
 
 header > div {
@@ -123,84 +125,83 @@ header > div {
   text-decoration: underline;
 }
 
-.esquerda {
+
+.esquerda_a {
   max-width: 15vw;
 }
 
-.esquerda > p > button {
-  background-color: #ffcc00;
-  border: solid 1px #d5aa00;
+.esquerda_a > p > button {
+  background-color: #FFDE59;
   border-radius: 40px;
   height: 3vw;
   margin: -0.5vw;
   width: 100%;
   font-size: 1vw;
-  color: rgb(63, 63, 63);
+  color: rgb(0, 0, 0);
   font-weight: 600;
   letter-spacing: 0.1vw;
   cursor: pointer;
+  box-shadow: 1px 1px 5px #0000004a;
+  transition: all 0.4s ease;
 }
 
-.esquerda > p > button:hover {
-  background-color: #ffcc00;
-  border-radius: 40px;
-  box-shadow: 0px 0px 4px #d5aa00;
+.esquerda_a > p > button:hover {
+  background-color: #ffdc50;
+  box-shadow: 0px 0px 4px #00000037;
   font-weight: 700;
-  font-style: italic;
-  color: rgb(0, 0, 0);
+  color: rgb(63, 63, 63);
+
 }
 
-.esquerda > p {
-  background-color: #ffde59;
+.esquerda_a > p {
   padding: 1vw;
   gap: 2vw;
-  border-radius: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 3vw;
-  box-shadow: 0.1em 0.1em 0.2em rgb(0, 0, 0);
+
 }
 
-.direita {
+
+.direita_a {
+  background-color: #F6F6F6;
   width: 15vw;
   height: 14vw;
-  background-color: #ffde59;
   margin-top: 2vw;
   padding: 0vw;
   border-radius: 40px;
-  box-shadow: 0.1em 0.1em 0.2em rgb(0, 0, 0);
+  box-shadow: 0.1em 0.1em 0.2em rgb(118, 118, 118);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.direita h2 {
+.direita_a h2 {
   margin-bottom: 2vw;
   width: 10vw;
   text-align: center;
 }
 
-.direita > button {
-  background-color: #ffcc00;
-  border: solid 1px #d5aa00;
+.direita_a > button {
   border-radius: 40px;
-  height: 3vw;
+  background-color: #FFDE59;
+  height: 3.5vw;
   width: 80%;
   font-size: 1vw;
   color: rgb(63, 63, 63);
   font-weight: 600;
   letter-spacing: 0.1vw;
+  box-shadow: 1px 1px 5px #0000004a;
   cursor: pointer;
+  transition: all 0.4s ease;
 }
 
-.direita > button:hover {
-  background-color: #ffcc00;
-  border-radius: 40px;
-  box-shadow: 0px 0px 4px #d5aa00;;
+.direita_a > button:hover {
+  background-color: #ffdc50;
+  box-shadow: 0px 0px 4px #00000034;
   font-weight: 700;
-  font-style: italic;
   color: rgb(0, 0, 0);
 }
 

@@ -1,7 +1,5 @@
 @charset "UTF-8";
 
-
-.principal{
 body {
   margin: 0;
   padding: 0;
@@ -9,239 +7,291 @@ body {
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  background-image: linear-gradient(to bottom, #c9f98e, #d1f4a5);
+  background-color:#d1f4a5;
+  background-image: url('../imagens/fundo.png');
+  background-size: 20vw;
 }
 
 header {
   width: 100%;  
+  height: 9vw;
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   background-color: #2accc3;
   text-align: center;
   box-shadow: 0 0.2em 0.5em rgb(214, 205, 205);
+  background-image: url('../imagens/cabecalho.png');
+  background-size: 9.5vw;
 }
 
-header > img {
-  margin-right: auto;
-  width: 15%;
-}
 
-header > h1 {
-  position: absolute;
-  font-size: 3.5vw;
-  left: 50%;
-  transform: translateX(-50%);
-}
 
-header > div {
-  width: 100%;
-  visibility: hidden;
-}
+.principal {
 
-.corpo {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-}
 
-.corpo_texto {
-  padding: 2vw 3vw 3vw 3vw;
-  width: 60%;
-  min-height: 100vh;
-  background-color: #e4f9ca;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 0.2em 0.5em rgb(214, 205, 205);
-}
+  header > img {
+    margin-right: auto;
+    width: 15%;
+  }
 
-.corpo_texto > p {
-  text-align: justify;
-}
+  header > h1 {
+    position: absolute;
+    font-size: 3.5vw;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #FFCC00;
+    text-shadow: #0f6764 2px 2px 1px;
+  }
 
-.corpo_texto > h2 {
-  text-align: center;
-}
+  header > div {
+    width: 100%;
+    visibility: hidden;
+  }
 
-.esquerda{
-  max-width: 15vw;
-}
+  .corpo {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
 
-.esquerda>p>button{
-  background-color: #ffcc00;
-  border: solid 1px #d5aa00;
-  border-radius: 40px;
-  height: 3vw;
-  margin: -0.5vw;
-  width: 100%;
-  font-size: 1vw;
-  color: rgb(63, 63, 63);
-  font-weight: 600;
-  letter-spacing: 0.1vw;
-  cursor: pointer;
-}
+  .corpo_texto {
+    padding: 2vw 3vw 3vw 3vw;
+    width: 55%;
+    background-color: #e4f9ca;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0.2em 0.5em rgb(214, 205, 205);
+  }
 
-.esquerda>p>button:hover{
-  background-color: #ffcc00;
-  border-radius: 40px;
-  box-shadow: 0px 0px 4px #d5aa00;;
-  font-weight: 700;
-  font-style: italic;
-  color: rgb(0, 0, 0);
-}
+  .corpo_texto > p {
+    text-align: justify;
+    width: 100%;
+  }
 
-.esquerda > p {
-  background-color: #ffde59;
-  padding: 1vw;
-  gap: 2vw;
-  border-radius: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 3vw;
-  box-shadow: 0.1em 0.1em 0.2em rgb(0, 0, 0);
-}
+  .corpo_texto > p > h1 {
+    text-align: center;
+  }
 
-.login-form,
-.register-form {
-  background-color: #f6f6f6;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0.1em 0.1em 0.2em rgb(0, 0, 0);
-  margin-bottom: 20px;
-}
+  .corpo_texto > p > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+  }
 
-.login-form h2,
-.register-form h2 {
-  margin-top: 0;
-  color: #333;
-}
+  .esquerda_p {
+    max-width: 15vw;
+  }
 
-.login-form form,
-.register-form form {
-  display: flex;
-  flex-direction: column;
-}
+  .esquerda_p > p > button {
+    background-color: #FFDE59;
+    border-radius: 40px;
+    height: 3vw;
+    margin: -0.5vw;
+    width: 100%;
+    font-size: 1vw;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    letter-spacing: 0.1vw;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px #0000004a;
+    transition: all 0.4s ease;
+  }
 
-.login-form form label,
-.register-form form label {
-  margin-bottom: 10px;
-  color: #555;
-}
+  .esquerda_p > p > button:hover {
+    background-color: #ffdc50;
+    box-shadow: 0px 0px 4px #00000037;
+    font-weight: 700;
+    color: rgb(63, 63, 63);
 
-.login-form form input,
-.register-form form input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
+  }
 
-.login-form form button,
-.register-form form button,
-.login-form form p button,
-.register-form form p button {
-  background-color: #2accc3;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  padding: 12px;
-  cursor: pointer;
-  margin-top: 10px; /* Espaço adicional entre o botão e o parágrafo */
-}
+  .esquerda_p > p {
+    padding: 1vw;
+    gap: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3vw;
 
-.login-form form button:hover,
-.register-form form button:hover,
-.login-form form p button:hover,
-.register-form form p button:hover {
-  background-color: #259b90;
-}
+  }
 
-.login-form form p,
-.register-form form p {
-  margin-top: 10px;
-  color: #777;
-}
+  .login-form,
+  .register-form {
+    background-color: #f6f6f6;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0.1em 0.1em 0.2em rgb(118, 118, 118);
+    margin-bottom: 20px;
+  }
 
-.direita {
-  width: 15vw;
-  height: 14vw;
-  background-color: #ffde59;
-  margin-top: 2vw;
-  padding: 0vw;
-  border-radius: 40px;
-  box-shadow: 0.1em 0.1em 0.2em rgb(0, 0, 0);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+  .login-form h2,
+  .register-form h2 {
+    margin-top: 0;
+    color: #333;
+  }
 
-.direita h2 {
-  margin-bottom: 2vw;
-  width: 10vw;
-  text-align: center;
-}
+  .login-form form,
+  .register-form form {
+    display: flex;
+    flex-direction: column;
+  }
 
-.direita > button {
-  background-color: #ffcc00;
-  border: solid 1px #d5aa00;
-  border-radius: 40px;
-  height: 5vw;
-  width: 80%;
-  font-size: 1vw;
-  color: rgb(63, 63, 63);
-  font-weight: 600;
-  letter-spacing: 0.1vw;
-  cursor: pointer;
-}
+  .login-form form label,
+  .register-form form label {
+    margin-bottom: 10px;
+    color: #555;
+  }
 
-.direita > button:hover {
-  background-color: #ffcc00;
-  border-radius: 40px;
-  box-shadow: 0px 0px 4px #d5aa00;;
-  font-weight: 700;
-  font-style: italic;
-  color: rgb(0, 0, 0);
-}
+  .login-form form input,
+  .register-form form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
 
-#Calendario {
-  margin-top: 0vw;
-  position: static;
-  background-color: #f6f6f6;
-  padding: 1vw;
-  border-radius: 10px 10px 10px 10px;
-  box-shadow: 0.1em 0.1em 0.2em rgb(0, 0, 0);
-}
+  .login-form form button,
+  .register-form form button,
+  .login-form form p button,
+  .register-form form p button {
+    border-radius: 4px;
+    background-color: #2ed4cc;;
+    height: 2.5vw;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    box-shadow: 1px 1px 5px #0000004a;
+    cursor: pointer;
+    transition: all 0.4s ease;
+  }
 
-#Calendario th,
-#Calendario td {
-  font-weight: 100;
-  border: 0.1vw solid black;
-  padding: 0.2vw;
-  background-color: #f8e7a3;
-  text-align: center;
-}
+  .login-form form button:hover,
+  .register-form form button:hover,
+  .login-form form p button:hover,
+  .register-form form p button:hover {
+    background-color: #36cfc7;
+    box-shadow: 0px 0px 4px #00000037;
+    font-weight: 700;
+    color: rgb(63, 63, 63);
+    
+  }
 
-#Calendario th {
-  background-color: #ffcc00;
-  padding: 0vw;
-}
+  .login-form form p,
+  .register-form form p {
+    margin-top: 10px;
+    color: #777;
+  }
 
-#header {
-  font-size: 1.7vw;
-  margin-bottom: 0.5vw;
-  text-align: center;
-}
+  .login-form > p{
+    margin-top: 2vw;
+    color: rgb(0, 0, 0);
+    text-align: right;
+  }
 
-.btn {
-  cursor: pointer;
-  align-self: center;
-  justify-content: center;
-  padding: 0.5vw 1vw;
-  margin: 0.2vw;
-  background-color: #fffb00;
-  border: 1px solid #ddd;
-  box-shadow: 0.1em 0.1em 0.2em rgb(118, 118, 118);
-}
+  .botao_senha{
+    border-radius: 4px;
+    background-color: #FFDE59;
+    height: 2vw;
+    width: 80%;
+    color: rgb(63, 63, 63);
+    font-weight: 600;
+    box-shadow: 1px 1px 6px #0000004a;
+    cursor: pointer;
+    display: block;
+    margin-left:auto;
+    margin-right: 0;
+    transition: all 0.4s ease;
+  }
+
+
+  .botao_senha:hover{
+    background-color: #ffdc50;
+    box-shadow: 0px 0px 3px #00000037;
+    font-weight: 700;
+    color: rgb(63, 63, 63);
+  }
+
+
+  .direita_p {
+    background-color: #F6F6F6;
+    width: 15vw;
+    height: 14vw;
+    margin-top: 2vw;
+    padding: 0vw;
+    border-radius: 40px;
+    box-shadow: 0.1em 0.1em 0.2em rgb(118, 118, 118);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .direita_p h2 {
+    margin-bottom: 2vw;
+    width: 10vw;
+    text-align: center;
+  }
+
+  .direita_p > button {
+    border-radius: 40px;
+    background-color: #FFDE59;
+    height: 3.5vw;
+    width: 80%;
+    font-size: 1vw;
+    color: rgb(63, 63, 63);
+    font-weight: 600;
+    letter-spacing: 0.1vw;
+    box-shadow: 1px 1px 5px #0000004a;
+    cursor: pointer;
+    transition: all 0.4s ease;
+  }
+
+  .direita_p > button:hover {
+    background-color: #ffdc50;
+    box-shadow: 0px 0px 4px #00000034;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+  }
+
+  #Calendario {
+    margin-top: 0vw;
+    position: static;
+    background-color: #f6f6f6;
+    padding: 1vw;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0.1em 0.1em 0.2em rgb(118, 118, 118);
+  }
+
+  #Calendario th,
+  #Calendario td {
+    font-weight: 100;
+    border: 0.1vw solid black;
+    padding: 0.2vw;
+    background-color: #f8e7a3;
+    text-align: center;
+  }
+
+  #Calendario th {
+    background-color: #ffcc00;
+    padding: 0vw;
+  }
+
+  #header {
+    font-size: 1.7vw;
+    margin-bottom: 0.5vw;
+    text-align: center;
+  }
+
+  .btn {
+    cursor: pointer;
+    align-self: center;
+    justify-content: center;
+    padding: 0.5vw 1vw;
+    margin: 0.2vw;
+    background-color: #fffb00;
+    border: 1px solid #ddd;
+    box-shadow: 0.1em 0.1em 0.2em rgb(118, 118, 118);
+  }
 }

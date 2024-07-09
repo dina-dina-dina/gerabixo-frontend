@@ -21,6 +21,7 @@
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
     background-color: #2accc3;
     text-align: center;
     box-shadow: 0 0.2em 0.5em rgb(214, 205, 205);
@@ -36,7 +37,8 @@
     left: 50%;
     transform: translateX(-50%);
     font-size: 3vw;
-    color: rgb(0, 0, 0);
+    color: #FFCC00;
+    text-shadow: #137673 2px 2px 2px;
   }
 
   header .spacer {
@@ -115,25 +117,24 @@
   }
 
   .form-section form button {
-    background-color: #ffcc00;
-    border: solid 1px #d5aa00;
-    border-radius: 40px;
-    padding-left: 1vw;
-    padding-right: 1vw;
-    height: 3vw;
+    border-radius: 20px;
     font-size: 1.2vw;
+    background-color: #FFDE59;
+    height: 3vw;
+    width: 80%;
     color: rgb(63, 63, 63);
     font-weight: 600;
-    letter-spacing: 0.1vw;
+    box-shadow: 1px 1px 6px #0000004a;
     cursor: pointer;
-    transition: all 0.3s ease;
+    display: block;
+    margin-left:auto;
+    margin-right: auto;
+    transition: all 0.4s ease;
   }
 
   .form-section form button:hover {
-    background-color: #ffde59;
-    border-radius: 40px;
-    box-shadow: 0px 0px 4px #d5aa00;
+    background-color: #ffdc50;
+    box-shadow: 0px 0px 3px #00000037;
     font-weight: 700;
-    font-style: italic;
-    color: rgb(0, 0, 0);
+    color: rgb(63, 63, 63);
   }}

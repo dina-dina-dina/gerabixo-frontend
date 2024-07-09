@@ -89,7 +89,7 @@ function Principal() {
         <div className="spacer"></div>
       </header>
       <div className="corpo">
-        <div className="esquerda">
+        <div className="esquerda_p">
           <p>
             <button onClick={handleLoginClick}>LOGIN</button>
           </p>
@@ -109,14 +109,14 @@ function Principal() {
                 <button type="submit">Entrar</button>
               </form>
               <p>
-                Não tem uma conta? <button onClick={handleRegisterClick}>Cadastre-se aqui</button>
+                Nova conta? <button className="botao_senha" onClick={handleRegisterClick}>Troque Sua Senha!</button>
               </p>
             </div>
           )}
 
           {showRegister && (
             <div className="register-form">
-              <h2>Cadastro</h2>
+              <h2>Troque Sua Senha</h2>
               <form>
                 <label>
                   Nome:
@@ -127,10 +127,10 @@ function Principal() {
                   <input type="text" name="username" />
                 </label>
                 <label>
-                  Senha:
+                  Nova Senha:
                   <input type="password" name="password" />
                 </label>
-                <button type="submit">Registrar</button>
+                <button type="submit">Concluir</button>
               </form>
             </div>
           )}
@@ -161,8 +161,33 @@ function Principal() {
         </div>
 
         <main className="corpo_texto">
-          <h2>Página Principal</h2>
+          
           <p>
+          <h1>Tópico 1</h1>
+            texto para o geranews Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Veritatis nisi neque tempora delectus
+            perspiciatis. Quidem aperiam error alias vero repudiandae architecto
+            texto para o geranews Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Veritatis nisi neque tempora delectus
+            perspiciatis. Quidem aperiam error alias vero repudiandae architecto
+            texto para o geranews Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Veritatis nisi neque tempora delectus
+
+            <br /><br />
+            texto para o geranews Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Veritatis nisi neque tempora delectus
+            perspiciatis. Quidem aperiam error alias vero repudiandae architecto
+            texto para o geranews Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Veritatis nisi neque tempora delectus
+            perspiciatis. Quidem aperiam error alias vero repudiandae architecto
+            texto para o geranews Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Veritatis nisi neque tempora delectus
+            <br /><br />
+            <img className="Logo" src={Logo} alt="logo gerabixo"></img>
+
+
+            <br /><br />
+            <h1>Tópico 2</h1>
             texto para o geranews Lorem ipsum dolor sit amet consectetur
             adipisicing elit. Veritatis nisi neque tempora delectus
             perspiciatis. Quidem aperiam error alias vero repudiandae architecto
@@ -183,29 +208,11 @@ function Principal() {
             adipisicing elit. Veritatis nisi neque tempora delectus
 
             <br /><br />
-            texto para o geranews Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Veritatis nisi neque tempora delectus
-            perspiciatis. Quidem aperiam error alias vero repudiandae architecto
-            texto para o geranews Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Veritatis nisi neque tempora delectus
-            perspiciatis. Quidem aperiam error alias vero repudiandae architecto
-            texto para o geranews Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Veritatis nisi neque tempora delectus
 
-            <br /><br />
-            texto para o geranews Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Veritatis nisi neque tempora delectus
-            perspiciatis. Quidem aperiam error alias vero repudiandae architecto
-            texto para o geranews Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Veritatis nisi neque tempora delectus
-            perspiciatis. Quidem aperiam error alias vero repudiandae architecto
-            texto para o geranews Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Veritatis nisi neque tempora delectus
-
-            <br /><br />
+            <img className="Logo" src={Logo} alt="logo gerabixo"></img>
           </p>
         </main>
-        <div className="direita">
+        <div className="direita_p">
           <h2>Torne-se um Apoiador</h2>
           <button onClick={handleRegisterClick}>Registre-se</button>
         </div>
@@ -215,3 +222,4 @@ function Principal() {
 }
 
 export default Principal;
+

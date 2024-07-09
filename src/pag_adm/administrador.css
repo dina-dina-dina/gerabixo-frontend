@@ -36,7 +36,8 @@ header > h1 {
   left: 50%;
   transform: translateX(-50%);
   font-size: 3vw;
-  color: rgb(0, 0, 0);
+  color: #FFCC00;
+  text-shadow: #137673 2px 2px 2px;
 }
 
 header .spacer {
@@ -52,7 +53,7 @@ header .spacer {
   margin-top: 0;
 }
 
-.esquerda {
+.esquerda_adm {
   width: 15vw;
   height: 100%;
   margin-top: 2vw;
@@ -61,39 +62,36 @@ header .spacer {
   border-radius: 40px;
 }
 
-.esquerda > p > button {
-  background-color: #ffcc00;
-  border: solid 1px #d5aa00;
+.esquerda_adm > p > button {
+  background-color: #FFDE59;
   border-radius: 40px;
   height: 3vw;
   margin: -0.5vw;
   width: 100%;
   font-size: 1vw;
-  color: rgb(63, 63, 63);
+  color: rgb(0, 0, 0);
   font-weight: 600;
   letter-spacing: 0.1vw;
   cursor: pointer;
-  transition: all 0.3s ease;
+  box-shadow: 1px 1px 5px #0000004a;
+  transition: all 0.4s ease;
 }
 
-.esquerda > p > button:hover {
-  background-color: #ffde59;
-  border-radius: 40px;
-  box-shadow: 0px 0px 4px #d5aa00;
+.esquerda_adm > p > button:hover {
+  background-color: #ffdc50;
+  box-shadow: 0px 0px 4px #00000037;
   font-weight: 700;
-  font-style: italic;
-  color: rgb(0, 0, 0);
+  color: rgb(63, 63, 63);
 }
 
-.esquerda > p {
+.esquerda_adm > p {
   padding: 1vw;
   gap: 2vw;
-  border-radius: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 3vw;
-  box-shadow: 0.1em 0.1em 0.2em rgb(0, 0, 0);
+
 }
 
 main {
@@ -143,25 +141,25 @@ main > h2 {
 }
 
 .corpo_texto form button {
-  background-color: #ffcc00;
-  border: solid 1px #d5aa00;
+  background-color: #FFDE59;
   border-radius: 40px;
   height: 3vw;
-  font-size: 1.2vw;
-  color: rgb(63, 63, 63);
+  margin: -0.5vw;
+  width: 70%;
+  font-size: 1vw;
+  color: rgb(0, 0, 0);
   font-weight: 600;
   letter-spacing: 0.1vw;
   cursor: pointer;
-  transition: all 0.3s ease;
+  box-shadow: 1px 1px 5px #0000004a;
+  transition: all 0.4s ease;
 }
 
 .corpo_texto form button:hover {
-  background-color: #ffde59;
-  border-radius: 40px;
-  box-shadow: 0px 0px 4px #d5aa00;
+  background-color: #ffdc50;
+  box-shadow: 0px 0px 4px #00000037;
   font-weight: 700;
-  font-style: italic;
-  color: rgb(0, 0, 0);
+  color: rgb(63, 63, 63);
 }
 
 .form-section {
@@ -201,25 +199,25 @@ main > h2 {
 }
 
 .form-section form button {
-  background-color: #ffcc00;
-  border: solid 1px #d5aa00;
+  background-color: #FFDE59;
   border-radius: 40px;
   height: 3vw;
-  font-size: 1.2vw;
-  color: rgb(63, 63, 63);
+  margin: -0.5vw;
+  width: 70%;
+  font-size: 1vw;
+  color: rgb(0, 0, 0);
   font-weight: 600;
   letter-spacing: 0.1vw;
   cursor: pointer;
-  transition: all 0.3s ease;
+  box-shadow: 1px 1px 5px #0000004a;
+  transition: all 0.4s ease;
 }
 
 .form-section form button:hover {
-  background-color: #ffde59;
-  border-radius: 40px;
-  box-shadow: 0px 0px 4px #d5aa00;
+  background-color: #ffdc50;
+  box-shadow: 0px 0px 4px #00000037;
   font-weight: 700;
-  font-style: italic;
-  color: rgb(0, 0, 0);
+  color: rgb(63, 63, 63);
 }
 
 .form-section select {

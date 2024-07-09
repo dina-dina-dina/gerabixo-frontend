@@ -105,7 +105,7 @@ function Administrador() {
       </header>
 
       <div className="corpo">
-        <div className="esquerda">  
+        <div className="esquerda_adm">  
             <p><button>LOGIN</button></p>
 
           <div id="Calendario">
