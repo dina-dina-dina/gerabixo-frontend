@@ -28,7 +28,6 @@
   }
 
   header > img {
-    margin-right: auto;
     width: 15%;
   }
 
@@ -36,9 +35,9 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 3vw;
+    font-size: 4vw;
     color: #FFCC00;
-    text-shadow: #137673 2px 2px 2px;
+    text-shadow: #000000 1.5px 1.5px 3px;
   }
 
   header .spacer {
@@ -106,8 +105,7 @@
   }
 
   .form-section form input,
-  .form-section form textarea,
-  .form-section form select {
+  .form-section form textarea {
     margin-bottom: 1vw;
     padding: 0.5vw;
     font-size: 1.2vw;
@@ -127,7 +125,7 @@
     box-shadow: 1px 1px 6px #0000004a;
     cursor: pointer;
     display: block;
-    margin-left:auto;
+    margin-left: auto;
     margin-right: auto;
     transition: all 0.4s ease;
   }
@@ -137,4 +135,97 @@
     box-shadow: 0px 0px 3px #00000037;
     font-weight: 700;
     color: rgb(63, 63, 63);
-  }}
+  }
+
+  .edit-button {
+    margin: 2vw;
+    padding: 1vw;
+    font-size: 1.3vw;
+    border-radius: 4px;
+    background-color: #2ed4cc;;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    box-shadow: 1px 1px 5px #0000004a;
+    cursor: pointer;
+    transition: all 0.4s ease;
+  }
+
+  .edit-button:hover {
+    background-color: #36cfc7;
+    box-shadow: 0px 0px 4px #00000037;
+    font-weight: 700;
+    color: rgb(63, 63, 63);
+  }
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-content {
+    background: white;
+    padding: 2vw;
+    border-radius: 10px;
+    box-shadow: 0 0.2em 0.5em rgb(214, 205, 205);
+    width: 80%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal-content h2 {
+    margin-bottom: 1vw;
+  }
+
+  .modal-content form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .modal-content form label {
+    margin-bottom: 1vw;
+    font-size: 1.2vw;
+  }
+
+  .modal-content form input {
+    margin-bottom: 1vw;
+    padding: 0.5vw;
+    font-size: 1.2vw;
+    border: 1px solid #d5aa00;
+    border-radius: 10px;
+    width: calc(100% - 1vw);
+  }
+
+  .modal-content form button {
+    border-radius: 20px;
+    margin: 1vw;
+    font-size: 1.2vw;
+    background-color: #FFDE59;
+    height: 3vw;
+    width: 60%;
+    color: rgb(44, 44, 44);
+    font-weight: 600;
+    box-shadow: 1px 1px 6px #0000004a;
+    cursor: pointer;
+    display: block;
+    margin-left:auto;
+    margin-right: auto;
+    transition: all 0.4s ease;
+  }
+
+  .modal-content form button:hover {
+    background-color: #ffdc50;
+    box-shadow: 0px 0px 3px #00000037;
+    font-weight: 700;
+    color: rgb(63, 63, 63);
+  }
+}

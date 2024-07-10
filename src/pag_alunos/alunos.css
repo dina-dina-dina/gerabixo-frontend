@@ -13,30 +13,30 @@ body {
 header {
   width: 100%;
   position: relative;
-  display: flex; /* Torna o cabeçalho um flex container */
-  align-items: center; /* Alinha verticalmente */
+  display: flex; /* Make header a flex container */
+  align-items: center; /* Vertically align items */
+  justify-content: center; /* Center all items */
   background-color: #2accc3;
   text-align: center;
   box-shadow: 0 0.2em 0.5em rgb(214, 205, 205);
 }
 
 header > img {
-  margin-right: auto;
   width: 15%;
+  margin: 0 2vw; /* Add space between items */
 }
 
 header > h1 {
-  position: absolute;
-  font-size: 3.5vw;
-  left: 50%;
-  transform: translateX(-50%);
+  font-size: 4vw;
   color: #FFCC00;
-  text-shadow: #137673 2px 2px 2px;
+  text-shadow: #000000 1.5px 1.5px 3px;
+  margin: 0 2vw; /* Add space between items */
 }
 
-header > div {
-  width: 100%;
+header > div.spacer {
+  width: 15%;
   visibility: hidden;
+  margin: 0 2vw; /* Add space between items */
 }
 
 .corpo {
@@ -47,7 +47,7 @@ header > div {
 
 .corpo_texto {
   padding: 2vw 3vw 3vw 3vw;
-  width: 60%;
+  width: 55%;
   background-color: #e4f9ca;
   display: flex;
   flex-direction: column;
@@ -125,7 +125,6 @@ header > div {
   text-decoration: underline;
 }
 
-
 .esquerda_a {
   max-width: 15vw;
 }
@@ -141,7 +140,7 @@ header > div {
   font-weight: 600;
   letter-spacing: 0.1vw;
   cursor: pointer;
-  box-shadow: 1px 1px 5px #0000004a;
+  box-shadow: 0px 0px 7px #000000c4;
   transition: all 0.4s ease;
 }
 
@@ -150,7 +149,6 @@ header > div {
   box-shadow: 0px 0px 4px #00000037;
   font-weight: 700;
   color: rgb(63, 63, 63);
-
 }
 
 .esquerda_a > p {
@@ -160,9 +158,7 @@ header > div {
   align-items: center;
   justify-content: center;
   margin-bottom: 3vw;
-
 }
-
 
 .direita_a {
   background-color: #F6F6F6;
@@ -187,13 +183,13 @@ header > div {
 .direita_a > button {
   border-radius: 40px;
   background-color: #FFDE59;
-  height: 3.5vw;
+  height: 3.4vw;
   width: 80%;
   font-size: 1vw;
   color: rgb(63, 63, 63);
   font-weight: 600;
   letter-spacing: 0.1vw;
-  box-shadow: 1px 1px 5px #0000004a;
+  box-shadow: 1.5px 1.5px 4px #00000085;
   cursor: pointer;
   transition: all 0.4s ease;
 }
@@ -207,11 +203,10 @@ header > div {
 
 #Calendario {
   margin-top: 0vw;
-  position: static;
   background-color: #f6f6f6;
   padding: 1vw;
-  border-radius: 10px 10px 10px 10px;
-  box-shadow: 0.1em 0.1em 0.2em rgb(0, 0, 0);
+  border-radius: 20px;
+  box-shadow: 0.1em 0.1em 0.3em rgb(0, 0, 0);
 }
 
 #Calendario th,
@@ -219,12 +214,12 @@ header > div {
   font-weight: 100;
   border: 0.1vw solid black;
   padding: 0.2vw;
-  background-color: #f8e7a3;
+  background-color: #fff5cc;
   text-align: center;
 }
 
 #Calendario th {
-  background-color: #ffcc00;
+  background-color: #FFDE59;
   padding: 0vw;
 }
 
@@ -238,9 +233,23 @@ header > div {
   cursor: pointer;
   align-self: center;
   justify-content: center;
-  padding: 0.5vw 1vw;
+  padding: 0vw 0.96vw;
   margin: 0.2vw;
-  background-color: #fffb00;
-  border: 1px solid #ddd;
-  box-shadow: 0.1em 0.1em 0.2em rgb(118, 118, 118);
+  font-size: 0.84vw;
+  border-radius: 4px;
+  background-color: #2ed4cc;
+  box-shadow: 1px 1px 6px #00000036;
+  transition: all 0.4s ease;
+  color: rgb(44, 44, 44);
+  height: 2.1vw;
+  font-weight: 600;
+  cursor: pointer;
+  border: 0.109vw solid black;
+}
+
+.btn:hover {
+  background-color: #36cfc7;
+  box-shadow: 0px 0px 4px #00000017;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
 }

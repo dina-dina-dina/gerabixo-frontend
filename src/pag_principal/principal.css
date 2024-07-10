@@ -18,280 +18,293 @@ header {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center; /* Center all items */
   background-color: #2accc3;
   text-align: center;
-  box-shadow: 0 0.2em 0.5em rgb(214, 205, 205);
+  box-shadow: 0 0.2em 0.5em rgb(209, 200, 200);
   background-image: url('../imagens/cabecalho.png');
   background-size: 9.5vw;
 }
 
+header img {
+  width: 15%;
+  margin: 0 2vw; /* Add space between items */
+}
 
+header h1 {
+  font-size: 4vw;
+  color: #FFCC00;
+  text-shadow: #000000 1.5px 1.5px 3px;
+  margin: 0 2vw; /* Add space between items */
+}
+
+header div.spacer {
+  width: 15%;
+  visibility: hidden;
+  margin: 0 2vw; /* Add space between items */
+}
 
 .principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
 
+.corpo {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 100%;
+}
 
-  header > img {
-    margin-right: auto;
-    width: 15%;
-  }
+.corpo_texto {
+  padding: 2vw 3vw 3vw 3vw;
+  width: 55%;
+  background-color: #e4f9ca;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0.2em 0.5em rgb(214, 205, 205);
+}
 
-  header > h1 {
-    position: absolute;
-    font-size: 3.5vw;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #FFCC00;
-    text-shadow: #0f6764 2px 2px 1px;
-  }
+.corpo_texto > p {
+  text-align: justify;
+  width: 100%;
+}
 
-  header > div {
-    width: 100%;
-    visibility: hidden;
-  }
+.corpo_texto > p > h1 {
+  text-align: center;
+}
 
-  .corpo {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-  }
+.corpo_texto > p > img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+}
 
-  .corpo_texto {
-    padding: 2vw 3vw 3vw 3vw;
-    width: 55%;
-    background-color: #e4f9ca;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 0.2em 0.5em rgb(214, 205, 205);
-  }
+.esquerda_p {
+  max-width: 15vw;
+}
 
-  .corpo_texto > p {
-    text-align: justify;
-    width: 100%;
-  }
+.esquerda_p > p > button {
+  background-color: #FFDE59;
+  border-radius: 40px;
+  height: 3vw;
+  margin: -0.5vw;
+  width: 100%;
+  font-size: 1vw;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  letter-spacing: 0.1vw;
+  cursor: pointer;
+  box-shadow: 0px 0px 7px #000000c4;
+  transition: all 0.4s ease;
+}
 
-  .corpo_texto > p > h1 {
-    text-align: center;
-  }
+.esquerda_p > p > button:hover {
+  background-color: #ffdc50;
+  box-shadow: 0px 0px 4px #00000037;
+  font-weight: 700;
+  color: rgb(63, 63, 63);
+}
 
-  .corpo_texto > p > img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 20%;
-  }
+.esquerda_p > p {
+  padding: 1vw;
+  gap: 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3vw;
+}
 
-  .esquerda_p {
-    max-width: 15vw;
-  }
+.login-form,
+.register-form {
+  background-color: #f6f6f6;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0.1em 0.1em 0.3em rgb(0, 0, 0);
+  margin-bottom: 20px;
+}
 
-  .esquerda_p > p > button {
-    background-color: #FFDE59;
-    border-radius: 40px;
-    height: 3vw;
-    margin: -0.5vw;
-    width: 100%;
-    font-size: 1vw;
-    color: rgb(0, 0, 0);
-    font-weight: 600;
-    letter-spacing: 0.1vw;
-    cursor: pointer;
-    box-shadow: 1px 1px 5px #0000004a;
-    transition: all 0.4s ease;
-  }
+.login-form h2,
+.register-form h2 {
+  margin-top: 0;
+  color: #333;
+}
 
-  .esquerda_p > p > button:hover {
-    background-color: #ffdc50;
-    box-shadow: 0px 0px 4px #00000037;
-    font-weight: 700;
-    color: rgb(63, 63, 63);
+.login-form form,
+.register-form form {
+  display: flex;
+  flex-direction: column;
+}
 
-  }
+.login-form form label,
+.register-form form label {
+  margin-bottom: 10px;
+  color: #555;
+}
 
-  .esquerda_p > p {
-    padding: 1vw;
-    gap: 2vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 3vw;
+.login-form form input,
+.register-form form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 
-  }
+.login-form form button,
+.register-form form button,
+.login-form form p button,
+.register-form form p button {
+  border-radius: 4px;
+  background-color: #2ed4cc;
+  box-shadow: 1px 1px 5px #0000004a;
+  transition: all 0.4s ease;
+  color: rgb(0, 0, 0);
+  height: 2.5vw;
+  font-weight: 600;
+  cursor: pointer;
+}
 
-  .login-form,
-  .register-form {
-    background-color: #f6f6f6;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0.1em 0.1em 0.2em rgb(118, 118, 118);
-    margin-bottom: 20px;
-  }
+.login-form form button:hover,
+.register-form form button:hover,
+.login-form form p button:hover,
+.register-form form p button:hover {
+  background-color: #36cfc7;
+  box-shadow: 0px 0px 4px #00000037;
+  font-weight: 700;
+  color: rgb(63, 63, 63);
+}
 
-  .login-form h2,
-  .register-form h2 {
-    margin-top: 0;
-    color: #333;
-  }
+.login-form form p,
+.register-form form p {
+  margin-top: 10px;
+  color: #777;
+}
 
-  .login-form form,
-  .register-form form {
-    display: flex;
-    flex-direction: column;
-  }
+.login-form > p {
+  margin-top: 2vw;
+  color: rgb(0, 0, 0);
+  text-align: right;
+}
 
-  .login-form form label,
-  .register-form form label {
-    margin-bottom: 10px;
-    color: #555;
-  }
+.botao_senha {
+  border-radius: 4px;
+  background-color: #FFDE59;
+  height: 2vw;
+  width: 80%;
+  color: rgb(63, 63, 63);
+  font-weight: 600;
+  box-shadow: 1px 1px 6px #0000004a;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+  transition: all 0.4s ease;
+}
 
-  .login-form form input,
-  .register-form form input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
+.botao_senha:hover {
+  background-color: #ffdc50;
+  box-shadow: 0px 0px 3px #00000037;
+  font-weight: 700;
+  color: rgb(63, 63, 63);
+}
 
-  .login-form form button,
-  .register-form form button,
-  .login-form form p button,
-  .register-form form p button {
-    border-radius: 4px;
-    background-color: #2ed4cc;;
-    height: 2.5vw;
-    color: rgb(0, 0, 0);
-    font-weight: 600;
-    box-shadow: 1px 1px 5px #0000004a;
-    cursor: pointer;
-    transition: all 0.4s ease;
-  }
+.direita_p {
+  background-color: #F6F6F6;
+  width: 15vw;
+  height: 14vw;
+  margin-top: 2vw;
+  padding: 0vw;
+  border-radius: 30px;
+  box-shadow: 0.1em 0.1em 0.3em rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-  .login-form form button:hover,
-  .register-form form button:hover,
-  .login-form form p button:hover,
-  .register-form form p button:hover {
-    background-color: #36cfc7;
-    box-shadow: 0px 0px 4px #00000037;
-    font-weight: 700;
-    color: rgb(63, 63, 63);
-    
-  }
+.direita_p h2 {
+  margin-bottom: 2vw;
+  width: 10vw;
+  text-align: center;
+}
 
-  .login-form form p,
-  .register-form form p {
-    margin-top: 10px;
-    color: #777;
-  }
+.direita_p > a {
+  width: 75%;
+}
 
-  .login-form > p{
-    margin-top: 2vw;
-    color: rgb(0, 0, 0);
-    text-align: right;
-  }
+.direita_p > a > button {
+  border-radius: 40px;
+  background-color: #FFDE59;
+  height: 3.5vw;
+  width: 100%;
+  font-size: 1vw;
+  color: rgb(63, 63, 63);
+  font-weight: 600;
+  letter-spacing: 0.1vw;
+  box-shadow: 1.5px 1.5px 4px #00000085;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
 
-  .botao_senha{
-    border-radius: 4px;
-    background-color: #FFDE59;
-    height: 2vw;
-    width: 80%;
-    color: rgb(63, 63, 63);
-    font-weight: 600;
-    box-shadow: 1px 1px 6px #0000004a;
-    cursor: pointer;
-    display: block;
-    margin-left:auto;
-    margin-right: 0;
-    transition: all 0.4s ease;
-  }
+.direita_p > a > button:hover {
+  background-color: #ffdc50;
+  box-shadow: 0px 0px 4px #00000034;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+}
 
+#Calendario {
+  margin-top: 0vw;
+  background-color: #f6f6f6;
+  padding: 1vw;
+  border-radius: 20px;
+  box-shadow: 0.1em 0.1em 0.3em rgb(0, 0, 0);
+}
 
-  .botao_senha:hover{
-    background-color: #ffdc50;
-    box-shadow: 0px 0px 3px #00000037;
-    font-weight: 700;
-    color: rgb(63, 63, 63);
-  }
+#Calendario th,
+#Calendario td {
+  font-weight: 100;
+  border: 0.1vw solid black;
+  padding: 0.2vw;
+  background-color: #fff5cc;
+  text-align: center;
+}
 
+#Calendario th {
+  background-color: #FFDE59;
+  padding: 0vw;
+}
 
-  .direita_p {
-    background-color: #F6F6F6;
-    width: 15vw;
-    height: 14vw;
-    margin-top: 2vw;
-    padding: 0vw;
-    border-radius: 40px;
-    box-shadow: 0.1em 0.1em 0.2em rgb(118, 118, 118);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+#header {
+  font-size: 1.7vw;
+  margin-bottom: 0.5vw;
+  text-align: center;
+}
 
-  .direita_p h2 {
-    margin-bottom: 2vw;
-    width: 10vw;
-    text-align: center;
-  }
+.btn {
+  cursor: pointer;
+  align-self: center;
+  justify-content: center;
+  padding: 0vw 0.96vw;
+  margin: 0.2vw;
+  font-size: 0.84vw;
+  border-radius: 4px;
+  background-color: #2ed4cc;
+  box-shadow: 1px 1px 6px #00000036;
+  transition: all 0.4s ease;
+  color: rgb(44, 44, 44);
+  height: 2.1vw;
+  font-weight: 600;
+  cursor: pointer;
+  border: 0.109vw solid black;
+}
 
-  .direita_p > button {
-    border-radius: 40px;
-    background-color: #FFDE59;
-    height: 3.5vw;
-    width: 80%;
-    font-size: 1vw;
-    color: rgb(63, 63, 63);
-    font-weight: 600;
-    letter-spacing: 0.1vw;
-    box-shadow: 1px 1px 5px #0000004a;
-    cursor: pointer;
-    transition: all 0.4s ease;
-  }
-
-  .direita_p > button:hover {
-    background-color: #ffdc50;
-    box-shadow: 0px 0px 4px #00000034;
-    font-weight: 700;
-    color: rgb(0, 0, 0);
-  }
-
-  #Calendario {
-    margin-top: 0vw;
-    position: static;
-    background-color: #f6f6f6;
-    padding: 1vw;
-    border-radius: 10px 10px 10px 10px;
-    box-shadow: 0.1em 0.1em 0.2em rgb(118, 118, 118);
-  }
-
-  #Calendario th,
-  #Calendario td {
-    font-weight: 100;
-    border: 0.1vw solid black;
-    padding: 0.2vw;
-    background-color: #f8e7a3;
-    text-align: center;
-  }
-
-  #Calendario th {
-    background-color: #ffcc00;
-    padding: 0vw;
-  }
-
-  #header {
-    font-size: 1.7vw;
-    margin-bottom: 0.5vw;
-    text-align: center;
-  }
-
-  .btn {
-    cursor: pointer;
-    align-self: center;
-    justify-content: center;
-    padding: 0.5vw 1vw;
-    margin: 0.2vw;
-    background-color: #fffb00;
-    border: 1px solid #ddd;
-    box-shadow: 0.1em 0.1em 0.2em rgb(118, 118, 118);
-  }
+.btn:hover {
+  background-color: #36cfc7;
+  box-shadow: 0px 0px 4px #00000017;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
 }

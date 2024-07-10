@@ -2,8 +2,7 @@ import "./alunos.css";
 import Logo from "../imagens/logo_gera.png";
 import React, { useState, useEffect } from "react";
 
-function Alunos()
-{
+function Alunos() {
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
   const [showLogin, setShowLogin] = useState(false);
@@ -83,7 +82,7 @@ function Alunos()
       <div className="corpo">
         <div className="esquerda_a">
           <p>
-            <button>Login</button>
+            <button>LOGIN</button>
           </p>
           <div id="Calendario">
             <div id="header"></div>

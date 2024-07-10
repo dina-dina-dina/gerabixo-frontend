@@ -214,7 +214,7 @@ function Principal() {
         </main>
         <div className="direita_p">
           <h2>Torne-se um Apoiador</h2>
-          <button onClick={handleRegisterClick}>Registre-se</button>
+          <a href="#"><button>Registre-se</button></a> 
         </div>
       </div>
     </div>
@@ -222,4 +222,3 @@ function Principal() {
 }
 
 export default Principal;
-
