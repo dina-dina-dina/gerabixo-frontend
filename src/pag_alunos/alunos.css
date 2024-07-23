@@ -13,9 +13,9 @@ body {
 header {
   width: 100%;
   position: relative;
-  display: flex; /* Make header a flex container */
-  align-items: center; /* Vertically align items */
-  justify-content: center; /* Center all items */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #2accc3;
   text-align: center;
   box-shadow: 0 0.2em 0.5em rgb(214, 205, 205);
@@ -23,20 +23,20 @@ header {
 
 header > img {
   width: 15%;
-  margin: 0 2vw; /* Add space between items */
+  margin: 0 2vw;
 }
 
 header > h1 {
   font-size: 4vw;
-  color: #FFCC00;
+  color: #ffcc00;
   text-shadow: #000000 1.5px 1.5px 3px;
-  margin: 0 2vw; /* Add space between items */
+  margin: 0 2vw;
 }
 
 header > div.spacer {
   width: 15%;
   visibility: hidden;
-  margin: 0 2vw; /* Add space between items */
+  margin: 0 2vw;
 }
 
 .corpo {
@@ -56,18 +56,38 @@ header > div.spacer {
 
 .corpo_texto > h2 {
   text-align: center;
+  font-size: 1.8vw;
+}
+
+.GeraBixo1{
+  width: 20%;
 }
 
 .materia {
+  display: flex;
+  justify-content: space-between;
   background-color: #f4f9f4;
   margin: 1vw 0;
-  padding: 1vw;
+  padding: 2vw;
   border-radius: 10px;
   box-shadow: 0 0.2em 0.5em rgb(214, 205, 205);
 }
 
+.materia h3 {
+  margin: 0;
+  margin-left: 1vw;
+  font-size: 1.5vw;
+  text-align: left;
+  cursor: pointer;
+}
+
+.materia-conteudo {
+  margin-top: 1vw;
+}
+
 .materia .prof {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
@@ -83,12 +103,6 @@ header > div.spacer {
   justify-content: center;
   color: white;
   margin-right: 1vw;
-}
-
-.materia h3 {
-  margin: 0;
-  margin-left: 1vw;
-  text-align: center;
 }
 
 .materia ul {
@@ -112,7 +126,7 @@ header > div.spacer {
 .links {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-self: right;
 }
 
 .links a {
@@ -130,7 +144,7 @@ header > div.spacer {
 }
 
 .esquerda_a > p > button {
-  background-color: #FFDE59;
+  background-color: #ffde59;
   border-radius: 40px;
   height: 3vw;
   margin: -0.5vw;
@@ -161,7 +175,7 @@ header > div.spacer {
 }
 
 .direita_a {
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
   width: 15vw;
   height: 14vw;
   margin-top: 2vw;
@@ -182,7 +196,7 @@ header > div.spacer {
 
 .direita_a > button {
   border-radius: 40px;
-  background-color: #FFDE59;
+  background-color: #ffde59;
   height: 3.4vw;
   width: 80%;
   font-size: 1vw;
@@ -219,7 +233,7 @@ header > div.spacer {
 }
 
 #Calendario th {
-  background-color: #FFDE59;
+  background-color: #ffde59;
   padding: 0vw;
 }
 

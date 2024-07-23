@@ -1,13 +1,14 @@
 import "./principal.css";
 import Logo from "../imagens/logo_gera.png";
 import React, { useState, useEffect } from "react";
+import QRCode from "../imagens/frame.png";
 
 function Principal() {
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
   const [showLogin, setShowLogin] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
-  
+
   const monthNames = [
     "Janeiro",
     "Fevereiro",
@@ -109,7 +110,10 @@ function Principal() {
                 <button type="submit">Entrar</button>
               </form>
               <p>
-                Nova conta? <button className="botao_senha" onClick={handleRegisterClick}>Troque Sua Senha!</button>
+                Nova conta?{" "}
+                <button className="botao_senha" onClick={handleRegisterClick}>
+                  Troque Sua Senha!
+                </button>
               </p>
             </div>
           )}
@@ -119,12 +123,8 @@ function Principal() {
               <h2>Troque Sua Senha</h2>
               <form>
                 <label>
-                  Nome:
+                  Email:
                   <input type="text" name="name" />
-                </label>
-                <label>
-                  Usuário:
-                  <input type="text" name="username" />
                 </label>
                 <label>
                   Nova Senha:
@@ -161,9 +161,8 @@ function Principal() {
         </div>
 
         <main className="corpo_texto">
-          
           <p>
-          <h1>Tópico 1</h1>
+            <h1>Tópico 1</h1>
             texto para o geranews Lorem ipsum dolor sit amet consectetur
             adipisicing elit. Veritatis nisi neque tempora delectus
             perspiciatis. Quidem aperiam error alias vero repudiandae architecto
@@ -172,8 +171,8 @@ function Principal() {
             perspiciatis. Quidem aperiam error alias vero repudiandae architecto
             texto para o geranews Lorem ipsum dolor sit amet consectetur
             adipisicing elit. Veritatis nisi neque tempora delectus
-
-            <br /><br />
+            <br />
+            <br />
             texto para o geranews Lorem ipsum dolor sit amet consectetur
             adipisicing elit. Veritatis nisi neque tempora delectus
             perspiciatis. Quidem aperiam error alias vero repudiandae architecto
@@ -182,11 +181,11 @@ function Principal() {
             perspiciatis. Quidem aperiam error alias vero repudiandae architecto
             texto para o geranews Lorem ipsum dolor sit amet consectetur
             adipisicing elit. Veritatis nisi neque tempora delectus
-            <br /><br />
+            <br />
+            <br />
             <img className="Logo" src={Logo} alt="logo gerabixo"></img>
-
-
-            <br /><br />
+            <br />
+            <br />
             <h1>Tópico 2</h1>
             texto para o geranews Lorem ipsum dolor sit amet consectetur
             adipisicing elit. Veritatis nisi neque tempora delectus
@@ -196,8 +195,8 @@ function Principal() {
             perspiciatis. Quidem aperiam error alias vero repudiandae architecto
             texto para o geranews Lorem ipsum dolor sit amet consectetur
             adipisicing elit. Veritatis nisi neque tempora delectus
-
-            <br /><br />
+            <br />
+            <br />
             texto para o geranews Lorem ipsum dolor sit amet consectetur
             adipisicing elit. Veritatis nisi neque tempora delectus
             perspiciatis. Quidem aperiam error alias vero repudiandae architecto
@@ -206,15 +205,21 @@ function Principal() {
             perspiciatis. Quidem aperiam error alias vero repudiandae architecto
             texto para o geranews Lorem ipsum dolor sit amet consectetur
             adipisicing elit. Veritatis nisi neque tempora delectus
-
-            <br /><br />
-
+            <br />
+            <br />
             <img className="Logo" src={Logo} alt="logo gerabixo"></img>
           </p>
         </main>
-        <div className="direita_p">
-          <h2>Torne-se um Apoiador</h2>
-          <a href="#"><button>Registre-se</button></a> 
+        <div className="direita_pg">
+          <div className="direita_p">
+            <h2>Torne-se um Apoiador</h2>
+            <a href="#">
+              <button>Registre-se</button>
+            </a>
+          </div>
+          <div className="direita_img">
+            <img src={QRCode} alt="Imagem do Apoio" />
+          </div>
         </div>
       </div>
     </div>

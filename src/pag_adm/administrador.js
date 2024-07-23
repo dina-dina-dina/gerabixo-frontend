@@ -41,7 +41,7 @@ function Administrador() {
   }, [currentMonth, currentYear, events]);
 
   function createCalendar(month, year) {
-    let firstDay = new Date(year, month).getDay();
+    let firstDay = new Date(year, month, 1).getDay();
     let daysInMonth = 32 - new Date(year, month, 32).getDate();
     let tbl = document.getElementById("calendar-body");
     tbl.innerHTML = "";
@@ -58,7 +58,10 @@ function Administrador() {
           break;
         } else {
           let cell = document.createElement("td");
-          let event = events.find(e => new Date(e.date).getDate() === date && new Date(e.date).getMonth() === month && new Date(e.date).getFullYear() === year);
+          let event = events.find(e => {
+            const eventDate = new Date(e.date);
+            return eventDate.getUTCDate() === date && eventDate.getUTCMonth() === month && eventDate.getUTCFullYear() === year;
+          });
           if (event) {
             cell.style.backgroundColor = '#FFDE59';
           }
@@ -173,10 +176,10 @@ function Administrador() {
               <h3>Eventos do Mês</h3>
               <ul>
                 {events
-                  .filter(event => new Date(event.date).getMonth() === currentMonth && new Date(event.date).getFullYear() === currentYear)
+                  .filter(event => new Date(event.date).getUTCMonth() === currentMonth && new Date(event.date).getUTCFullYear() === currentYear)
                   .map((event, index) => (
                     <li key={index}>
-                      {new Date(event.date).getDate()} - {event.title}
+                      {new Date(event.date).getUTCDate()} - {event.title}
                     </li>
                   ))}
               </ul>

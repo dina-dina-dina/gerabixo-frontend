@@ -1,13 +1,15 @@
 import "./alunos.css";
 import Logo from "../imagens/logo_gera.png";
 import React, { useState, useEffect } from "react";
+import Mascotes from "../imagens/GeraBixo1.png";
 
 function Alunos() {
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
   const [showLogin, setShowLogin] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
-  
+  const [visibleSubjects, setVisibleSubjects] = useState({});
+
   const monthNames = [
     "Janeiro",
     "Fevereiro",
@@ -70,7 +72,47 @@ function Alunos() {
     setCurrentMonth(newMonth);
     setCurrentYear(newYear);
   }
-  
+
+  function toggleVisibility(subject) {
+    setVisibleSubjects((prev) => ({
+      ...prev,
+      [subject]: !prev[subject],
+    }));
+  }
+
+  function renderMateria(titulo, topicos) {
+    return (
+      <div className="materia">
+        <div className="foto_prof">Foto do prof</div>
+        <h3
+          onClick={() => toggleVisibility(titulo)}
+          style={{ cursor: "pointer", textAlign: "left" }}
+        >
+          {titulo} {visibleSubjects[titulo] ? "▲" : "▼"}
+        </h3>
+        {visibleSubjects[titulo] && (
+          <div className="materia-conteudo">
+            <div className="prof">
+              <ul>
+                {topicos.map((topico) => (
+                  <li key={topico.id}>
+                    <input type="checkbox" id={topico.id} />
+                    <label htmlFor={topico.id}>{topico.label}</label>
+                  </li>
+                ))}
+              </ul>
+              <div className="links">
+                <a href="#">Aulas (link)</a>
+                <a href="#">Lista de Exercícios (link)</a>
+              </div>
+            </div>
+          </div>
+        )}
+        <img className="GeraBixo1" src={Mascotes} alt="mascotes gera"></img>
+      </div>
+    );
+  }
+
   return (
     <div>
       <header>
@@ -111,90 +153,45 @@ function Alunos() {
 
         <main className="corpo_texto">
           <h2>Página do Aluno</h2>
-          <div className="materia">
-            <div className="prof">
-              <div className="foto_prof">Foto do prof</div>
-              <h3>Matemática</h3>
-              <ul>
-                <li>
-                  <input type="checkbox" id="mat1" />
-                  <label htmlFor="mat1">Funções</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="mat2" />
-                  <label htmlFor="mat2">Probabilidade</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="mat3" />
-                  <label htmlFor="mat3">Geometria Analítica</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="mat4" />
-                  <label htmlFor="mat4">Estatística</label>
-                </li>
-              </ul>
-              <div className="links">
-                <a href="#">Aulas (link)</a>
-                <a href="#">Lista de Exercícios (link)</a>
-              </div>
-            </div>
-          </div>
-          <div className="materia">
-            <div className="prof">
-              <div className="foto_prof">Foto do prof</div>
-              <h3>Física</h3>
-              <ul>
-                <li>
-                  <input type="checkbox" id="fis1" />
-                  <label htmlFor="fis1">Mecânica</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="fis2" />
-                  <label htmlFor="fis2">Termodinâmica</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="fis3" />
-                  <label htmlFor="fis3">Óptica</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="fis4" />
-                  <label htmlFor="fis4">Eletromagnetismo</label>
-                </li>
-              </ul>
-              <div className="links">
-                <a href="#">Aulas (hiperlink)</a>
-                <a href="#">Lista de Exercícios (hiperlink)</a>
-              </div>
-            </div>
-          </div>
-          <div className="materia">
-            <div className="prof">
-              <div className="foto_prof">Foto do prof</div>
-              <h3>Química</h3>
-              <ul>
-                <li>
-                  <input type="checkbox" id="qui1" />
-                  <label htmlFor="qui1">Estequiometria</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="qui2" />
-                  <label htmlFor="qui2">Reações Químicas</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="qui3" />
-                  <label htmlFor="qui3">Química Orgânica</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="qui4" />
-                  <label htmlFor="qui4">Eletroquímica</label>
-                </li>
-              </ul>
-              <div className="links">
-                <a href="#">Aulas (hiperlink)</a>
-                <a href="#">Lista de Exercícios (hiperlink)</a>
-              </div>
-            </div>
-          </div>
+          {renderMateria("Matemática", [
+            { id: "mat1", label: "Funções" },
+            { id: "mat2", label: "Probabilidade" },
+            { id: "mat3", label: "Geometria Analítica" },
+            { id: "mat4", label: "Estatística" },
+          ])}
+          {renderMateria("Física", [
+            { id: "fis1", label: "Mecânica" },
+            { id: "fis2", label: "Termodinâmica" },
+            { id: "fis3", label: "Óptica" },
+            { id: "fis4", label: "Eletromagnetismo" },
+          ])}
+          {renderMateria("Química", [
+            { id: "qui1", label: "Estequiometria" },
+            { id: "qui2", label: "Reações Químicas" },
+            { id: "qui3", label: "Química Orgânica" },
+            { id: "qui4", label: "Eletroquímica" },
+          ])}
+          {renderMateria("Gramática", [])}
+          {renderMateria("Física Elétrica", [])}
+          {renderMateria("Física Mecânica", [])}
+          {renderMateria("Matemática Fundamental", [])}
+          {renderMateria("Química Geral", [])}
+          {renderMateria("Geometria", [])}
+          {renderMateria("Redação", [])}
+          {renderMateria("Biologia Celular", [])}
+          {renderMateria("Inglês", [])}
+          {renderMateria("Literatura", [])}
+          {renderMateria("Físico Química", [])}
+          {renderMateria("Filosofia", [])}
+          {renderMateria("História Geral", [])}
+          {renderMateria("Geografia Geral", [])}
+          {renderMateria("Álgebra", [])}
+          {renderMateria("Biologia Animal", [])}
+          {renderMateria("Sociologia", [])}
+          {renderMateria("Biologia Botânica", [])}
+          {renderMateria("Física Óptica", [])}
+          {renderMateria("Geografia do Brasil", [])}
+          {renderMateria("História do Brasil", [])}
         </main>
 
         <div className="direita_a">

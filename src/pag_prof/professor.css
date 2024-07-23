@@ -72,6 +72,20 @@
     color: #000;
   }
 
+  .profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2vw;
+  }
+
+  .profile-pic {
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    margin-right: 1vw;
+    object-fit: cover;
+  }
+
   .corpo_texto {
     margin-top: 0;
     width: 100%;
@@ -105,7 +119,8 @@
   }
 
   .form-section form input,
-  .form-section form textarea {
+  .form-section form textarea,
+  .form-section form select {
     margin-bottom: 1vw;
     padding: 0.5vw;
     font-size: 1.2vw;
@@ -142,7 +157,7 @@
     padding: 1vw;
     font-size: 1.3vw;
     border-radius: 4px;
-    background-color: #2ed4cc;;
+    background-color: #2ed4cc;
     color: rgb(0, 0, 0);
     font-weight: 600;
     box-shadow: 1px 1px 5px #0000004a;

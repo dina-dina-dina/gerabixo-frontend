@@ -7,18 +7,18 @@ body {
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  background-color:#d1f4a5;
+  background-color: #d1f4a5;
   background-image: url('../imagens/fundo.png');
   background-size: 20vw;
 }
 
 header {
-  width: 100%;  
+  width: 100%;
   height: 9vw;
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center; /* Center all items */
+  justify-content: center;
   background-color: #2accc3;
   text-align: center;
   box-shadow: 0 0.2em 0.5em rgb(209, 200, 200);
@@ -28,20 +28,20 @@ header {
 
 header img {
   width: 15%;
-  margin: 0 2vw; /* Add space between items */
+  margin: 0 2vw;
 }
 
 header h1 {
   font-size: 4vw;
   color: #FFCC00;
   text-shadow: #000000 1.5px 1.5px 3px;
-  margin: 0 2vw; /* Add space between items */
+  margin: 0 2vw;
 }
 
 header div.spacer {
   width: 15%;
   visibility: hidden;
-  margin: 0 2vw; /* Add space between items */
+  margin: 0 2vw;
 }
 
 .principal {
@@ -211,6 +211,13 @@ header div.spacer {
   color: rgb(63, 63, 63);
 }
 
+.direita_pg{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
 .direita_p {
   background-color: #F6F6F6;
   width: 15vw;
@@ -254,6 +261,33 @@ header div.spacer {
   box-shadow: 0px 0px 4px #00000034;
   font-weight: 700;
   color: rgb(0, 0, 0);
+}
+
+.direita_img {
+  background-color: #F6F6F6;
+  width: 15vw;
+  height: 14vw;
+  margin-top: 2vw;
+  padding: 0vw;
+  border-radius: 30px;
+  box-shadow: 0.1em 0.1em 0.3em rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.direita_img h2 {
+  margin-bottom: 2vw;
+  width: 10vw;
+  text-align: center;
+}
+
+.direita_img > img {
+  width: 60%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #Calendario {

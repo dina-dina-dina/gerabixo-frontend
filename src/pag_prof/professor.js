@@ -3,22 +3,28 @@ import Logo from "../imagens/logo_gera.png";
 import React, { useState } from "react";
 
 function Professor() {
-  const [subjectMatter, setSubjectMatter] = useState('');
+  const [selectedOption, setSelectedOption] = useState('aulas');
   const [classLink, setClassLink] = useState('');
   const [classFile, setClassFile] = useState(null);
+  const [exerciseLink, setExerciseLink] = useState('');
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-  const [name, setName] = useState('');
+  const [name, setName] = useState('Nome do Professor');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [photo, setPhoto] = useState(null);
 
   const handleClassSubmit = (e) => {
     e.preventDefault();
-    console.log("Aula submetida:", subjectMatter, classLink, classFile);
+    if (selectedOption === 'aulas') {
+      console.log("Aula submetida:", classLink, classFile);
+    } else if (selectedOption === 'exercicios') {
+      console.log("Lista de exercícios submetida:", exerciseLink);
+    }
   };
 
   const handleEditSubmit = (e) => {
     e.preventDefault();
-    console.log("Dados atualizados:", name, email, password);
+    console.log("Dados atualizados:", name, email, password, photo);
     setIsEditModalOpen(false);
   };
 
@@ -32,23 +38,39 @@ function Professor() {
 
       <div className="corpo">
         <main>
-          <h2>Perfil do Professor</h2>
+          <div className="profile-header">
+            <img className="profile-pic" src={photo ? URL.createObjectURL(photo) : "https://via.placeholder.com/150"} alt="Foto do Professor" />
+            <h2>Olá, {name}</h2>
+          </div>
           <div className="corpo_texto">
             <div className="form-section">
               <form onSubmit={handleClassSubmit}>
                 <label>
-                  Assunto da Matéria:
-                  <textarea value={subjectMatter} onChange={(e) => setSubjectMatter(e.target.value)}></textarea>
+                  Selecione uma opção:
+                  <select value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)}>
+                    <option value="aulas">Aulas</option>
+                    <option value="exercicios">Lista de Exercícios</option>
+                  </select>
                 </label>
-                <label>
-                  Link da Aula:
-                  <input type="text" value={classLink} onChange={(e) => setClassLink(e.target.value)} />
-                </label>
-                <label>
-                  Ou faça upload de um arquivo:
-                  <input type="file" onChange={(e) => setClassFile(e.target.files[0])} />
-                </label>
-                <button type="submit">Enviar Aula</button>
+                {selectedOption === 'aulas' && (
+                  <>
+                    <label>
+                      Link da Aula:
+                      <input type="text" value={classLink} onChange={(e) => setClassLink(e.target.value)} />
+                    </label>
+                    <label>
+                      Ou faça upload de um arquivo:
+                      <input type="file" onChange={(e) => setClassFile(e.target.files[0])} />
+                    </label>
+                  </>
+                )}
+                {selectedOption === 'exercicios' && (
+                  <label>
+                    Link da Lista de Exercícios:
+                    <input type="text" value={exerciseLink} onChange={(e) => setExerciseLink(e.target.value)} />
+                  </label>
+                )}
+                <button type="submit">Enviar</button>
               </form>
             </div>
           </div>
@@ -72,6 +94,10 @@ function Professor() {
               <label>
                 Senha:
                 <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+              </label>
+              <label>
+                Foto:
+                <input type="file" onChange={(e) => setPhoto(e.target.files[0])} />
               </label>
               <button type="submit">Salvar</button>
               <button type="button" onClick={() => setIsEditModalOpen(false)}>Cancelar</button>
