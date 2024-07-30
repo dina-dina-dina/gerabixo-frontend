@@ -6,28 +6,27 @@ import Mascotes from "../imagens/GeraBixo1.png";
 function Alunos() {
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
-  const [showLogin, setShowLogin] = useState(false);
-  const [showRegister, setShowRegister] = useState(false);
   const [visibleSubjects, setVisibleSubjects] = useState({});
+  const [users, setUsers] = useState([]); // State to store users
 
   const monthNames = [
-    "Janeiro",
-    "Fevereiro",
-    "Março",
-    "Abril",
-    "Maio",
-    "Junho",
-    "Julho",
-    "Agosto",
-    "Setembro",
-    "Outubro",
-    "Novembro",
-    "Dezembro",
+    "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", 
+    "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
   ];
 
   useEffect(() => {
     createCalendar(currentMonth, currentYear);
   }, [currentMonth, currentYear]);
+
+  useEffect(() => {
+    // Fetch users data from the backend or local storage
+    const fetchUsers = async () => {
+      // Replace with actual data fetching logic
+      const data = await fetchUsersFromBackend(); // Example function
+      setUsers(data);
+    };
+    fetchUsers();
+  }, []);
 
   function createCalendar(month, year) {
     let firstDay = new Date(year, month).getDay();
@@ -55,8 +54,7 @@ function Alunos() {
       }
       tbl.appendChild(row);
     }
-    document.getElementById("header").innerHTML =
-      monthNames[month] + " " + year;
+    document.getElementById("header").innerHTML = monthNames[month] + " " + year;
   }
 
   function moveMonth(step) {
@@ -74,41 +72,41 @@ function Alunos() {
   }
 
   function toggleVisibility(subject) {
-    setVisibleSubjects((prev) => ({
+    setVisibleSubjects(prev => ({
       ...prev,
       [subject]: !prev[subject],
     }));
   }
 
   function renderMateria(titulo, topicos) {
+    const professor = users.find(user => user.materia === titulo && user.type === 'Professor');
     return (
-      <div className="materia">
-        <div className="foto_prof">Foto do prof</div>
-        <h3
-          onClick={() => toggleVisibility(titulo)}
-          style={{ cursor: "pointer", textAlign: "left" }}
-        >
-          {titulo} {visibleSubjects[titulo] ? "▲" : "▼"}
-        </h3>
+      <div className="materia" key={titulo}>
+        <div className="materia-header">
+          <div className="foto_prof">
+            {professor && <img src={URL.createObjectURL(professor.photo)} alt="professor" />}
+          </div>
+          <h3 onClick={() => toggleVisibility(titulo)} style={{ cursor: "pointer" }}>
+            {titulo} {visibleSubjects[titulo] ? "▲" : "▼"}
+          </h3>
+          <img className="GeraBixo1" src={Mascotes} alt="mascotes gera"></img>
+        </div>
         {visibleSubjects[titulo] && (
           <div className="materia-conteudo">
-            <div className="prof">
-              <ul>
-                {topicos.map((topico) => (
-                  <li key={topico.id}>
-                    <input type="checkbox" id={topico.id} />
-                    <label htmlFor={topico.id}>{topico.label}</label>
-                  </li>
-                ))}
-              </ul>
-              <div className="links">
-                <a href="#">Aulas (link)</a>
-                <a href="#">Lista de Exercícios (link)</a>
-              </div>
+            <ul>
+              {topicos.map(topico => (
+                <li key={topico.id}>
+                  <input type="checkbox" id={topico.id} />
+                  <label htmlFor={topico.id}>{topico.label}</label>
+                </li>
+              ))}
+            </ul>
+            <div className="links">
+              <a href="#">Aulas (link)</a>
+              <a href="#">Lista de Exercícios (link)</a>
             </div>
           </div>
         )}
-        <img className="GeraBixo1" src={Mascotes} alt="mascotes gera"></img>
       </div>
     );
   }

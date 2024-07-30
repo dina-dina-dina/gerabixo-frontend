@@ -14,26 +14,28 @@ function Administrador() {
   const [userName, setUserName] = useState('');
   const [userTurno, setUserTurno] = useState('Manhã');
   const [userMateria, setUserMateria] = useState('Matemática');
+  const [userPhoto, setUserPhoto] = useState(null);
   const [qrCode, setQrCode] = useState('');
   const [eventTitle, setEventTitle] = useState('');
   const [eventDate, setEventDate] = useState('');
   const [posts, setPosts] = useState([]);
   const [users, setUsers] = useState([]);
   const [events, setEvents] = useState([]);
+  const [editUserEmail, setEditUserEmail] = useState('');
+  const [editUser, setEditUser] = useState(null);
+
+  const subjects = [
+    "Matemática", "Física", "Química", "Gramática", "Física Elétrica", 
+    "Física Mecânica", "Matemática Fundamental", "Química Geral", 
+    "Geometria", "Redação", "Biologia Celular", "Inglês", "Literatura", 
+    "Físico Química", "Filosofia", "História Geral", "Geografia Geral", 
+    "Álgebra", "Biologia Animal", "Sociologia", "Biologia Botânica", 
+    "Física Óptica", "Geografia do Brasil", "História do Brasil"
+  ];
 
   const monthNames = [
-    "Janeiro",
-    "Fevereiro",
-    "Março",
-    "Abril",
-    "Maio",
-    "Junho",
-    "Julho",
-    "Agosto",
-    "Setembro",
-    "Outubro",
-    "Novembro",
-    "Dezembro",
+    "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", 
+    "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
   ];
 
   useEffect(() => {
@@ -102,13 +104,21 @@ function Administrador() {
 
   const handleUserSubmit = (e) => {
     e.preventDefault();
-    const newUser = { type: userType, email: userEmail, name: userName, turno: userTurno, materia: userMateria };
+    const newUser = { 
+      type: userType, 
+      email: userEmail, 
+      name: userName, 
+      turno: userTurno, 
+      materia: userMateria, 
+      photo: userPhoto 
+    };
     setUsers([...users, newUser]);
     setUserType('Aluno');
     setUserEmail('');
     setUserName('');
     setUserTurno('Manhã');
     setUserMateria('Matemática');
+    setUserPhoto(null);
     console.log("Usuário cadastrado:", newUser);
   };
 
@@ -137,6 +147,36 @@ function Administrador() {
   const handleRemoveEvent = (title) => {
     setEvents(events.filter(event => event.title !== title));
   };
+
+  const handleEditUserSubmit = (e) => {
+    e.preventDefault();
+    const updatedUsers = users.map(user => 
+      user.email === editUserEmail ? { ...user, type: userType, email: userEmail, name: userName, turno: userTurno, materia: userMateria, photo: userPhoto } : user
+    );
+    setUsers(updatedUsers);
+    setEditUserEmail('');
+    setEditUser(null);
+    setUserType('Aluno');
+    setUserEmail('');
+    setUserName('');
+    setUserTurno('Manhã');
+    setUserMateria('Matemática');
+    setUserPhoto(null);
+    console.log("Usuário editado:", updatedUsers.find(user => user.email === editUserEmail));
+  };
+
+  useEffect(() => {
+    const userToEdit = users.find(user => user.email === editUserEmail);
+    if (userToEdit) {
+      setEditUser(userToEdit);
+      setUserType(userToEdit.type);
+      setUserEmail(userToEdit.email);
+      setUserName(userToEdit.name);
+      setUserTurno(userToEdit.turno);
+      setUserMateria(userToEdit.materia);
+      setUserPhoto(userToEdit.photo);
+    }
+  }, [editUserEmail]);
 
   return (
     <div className="administrador">
@@ -199,6 +239,7 @@ function Administrador() {
                   <option value="remover-publicacao">Remover Publicação</option>
                   <option value="novo-cadastro">Novo Cadastro</option>
                   <option value="remover-cadastro">Remover Cadastro</option>
+                  <option value="editar-cadastro">Editar Cadastro</option>
                   <option value="inserir-qr-code">Inserir QR Code</option>
                   <option value="adicionar-evento">Adicionar Evento ao Calendário</option>
                   <option value="remover-evento">Remover Evento</option>
@@ -284,13 +325,14 @@ function Administrador() {
                         <label>
                           Matéria:
                           <select value={userMateria} onChange={(e) => setUserMateria(e.target.value)}>
-                            <option value="Matemática">Matemática</option>
-                            <option value="Português">Português</option>
-                            <option value="História">História</option>
-                            <option value="Geografia">Geografia</option>
-                            <option value="Ciências">Ciências</option>
-                            <option value="Inglês">Inglês</option>
+                            {subjects.map(subject => (
+                              <option key={subject} value={subject}>{subject}</option>
+                            ))}
                           </select>
+                        </label>
+                        <label>
+                          Foto:
+                          <input type="file" onChange={(e) => setUserPhoto(e.target.files[0])} />
                         </label>
                         <button type="submit">Cadastrar</button>
                       </>
@@ -313,6 +355,75 @@ function Administrador() {
                       </select>
                     </label>
                     <button type="submit">Remover Cadastro</button>
+                  </form>
+                </div>
+              )}
+
+              {selectedOption === "editar-cadastro" && (
+                <div className="form-section">
+                  <h3>Editar Cadastro</h3>
+                  <form onSubmit={handleEditUserSubmit}>
+                    <label>
+                      Email do Usuário:
+                      <select value={editUserEmail} onChange={(e) => setEditUserEmail(e.target.value)}>
+                        <option value="">Selecione</option>
+                        {users.map((user, index) => (
+                          <option key={index} value={user.email}>{user.email} - {user.type}</option>
+                        ))}
+                      </select>
+                    </label>
+                    {editUser && (
+                      <>
+                        <label>
+                          Tipo de Usuário:
+                          <select value={userType} onChange={(e) => setUserType(e.target.value)}>
+                            <option value="Aluno">Aluno</option>
+                            <option value="Professor">Professor</option>
+                          </select>
+                        </label>
+                        {userType === "Aluno" && (
+                          <>
+                            <label>
+                              Email:
+                              <input type="email" value={userEmail} onChange={(e) => setUserEmail(e.target.value)} />
+                            </label>
+                            <button type="submit">Salvar Alterações</button>
+                          </>
+                        )}
+                        {userType === "Professor" && (
+                          <>
+                            <label>
+                              Nome:
+                              <input type="text" value={userName} onChange={(e) => setUserName(e.target.value)} />
+                            </label>
+                            <label>
+                              Email:
+                              <input type="email" value={userEmail} onChange={(e) => setUserEmail(e.target.value)} />
+                            </label>
+                            <label>
+                              Turno:
+                              <select value={userTurno} onChange={(e) => setUserTurno(e.target.value)}>
+                                <option value="Manhã">Manhã</option>
+                                <option value="Tarde">Tarde</option>
+                              </select>
+                            </label>
+                            <label>
+                              Matéria:
+                              <select value={userMateria} onChange={(e) => setUserMateria(e.target.value)}>
+                                {subjects.map(subject => (
+                                  <option key={subject} value={subject}>{subject}</option>
+                                ))}
+                              </select>
+                            </label>
+                            <label>
+                              Foto:
+                              <input type="file" onChange={(e) => setUserPhoto(e.target.files[0])} />
+                            </label>
+                            <button type="submit">Salvar Alterações</button>
+                          </>
+                        )}
+                      </>
+                    )}
                   </form>
                 </div>
               )}

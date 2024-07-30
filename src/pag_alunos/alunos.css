@@ -56,27 +56,30 @@ header > div.spacer {
 
 .corpo_texto > h2 {
   text-align: center;
-  font-size: 1.8vw;
 }
 
-.GeraBixo1{
+.GeraBixo1 {
   width: 20%;
+  margin-left: 1vw;
 }
 
 .materia {
-  display: flex;
-  justify-content: space-between;
   background-color: #f4f9f4;
   margin: 1vw 0;
-  padding: 2vw;
+  padding: 1vw;
   border-radius: 10px;
   box-shadow: 0 0.2em 0.5em rgb(214, 205, 205);
+}
+
+.materia-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .materia h3 {
   margin: 0;
   margin-left: 1vw;
-  font-size: 1.5vw;
   text-align: left;
   cursor: pointer;
 }
@@ -87,9 +90,8 @@ header > div.spacer {
 
 .materia .prof {
   display: flex;
-  flex-direction: column;
+
   align-items: center;
-  justify-content: space-between;
 }
 
 .materia .foto_prof {
@@ -103,6 +105,12 @@ header > div.spacer {
   justify-content: center;
   color: white;
   margin-right: 1vw;
+}
+
+.materia .foto_prof img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
 
 .materia ul {
@@ -126,7 +134,7 @@ header > div.spacer {
 .links {
   display: flex;
   flex-direction: column;
-  align-self: right;
+  align-items: flex-end;
 }
 
 .links a {
